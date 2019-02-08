@@ -20,3 +20,4 @@ Suggests:
 VignetteBuilder: knitr
 URL: https://github.com/lwjohnst86/r2gh
 BugReports: https://github.com/lwjohnst86/r2gh/issues
+RoxygenNote: 6.1.1
