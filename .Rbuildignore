@@ -1,0 +1,8 @@
+^appveyor\.yml$
+^\.travis\.yml$
+^cran-comments\.md$
+^CODE_OF_CONDUCT\.md$
+^README\.Rmd$
+^LICENSE\.md$
+^r2gh\.Rproj$
+^\.Rproj\.user$
