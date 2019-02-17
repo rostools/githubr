@@ -71,7 +71,7 @@ gh_new_issue <- function(repo, title, body = NULL, labels = NULL,
 #' \dontrun{
 #' gh_list_issues("lwjohnst86/test-githubr")
 #' }
-gh_list_issues <- function(repo, tidied = TRUE) {
+gh_list_issues <- function(repo, tidied = FALSE) {
     # TODO: Add filtering
     repo_issues <- template_github_request(
         repo = repo,
@@ -79,8 +79,10 @@ gh_list_issues <- function(repo, tidied = TRUE) {
         .method = "GET"
     )
 
-    if (tidied)
-        repo_issues <- tidy(repo_issues)
+    if (tidied) {
+        warning("This has not been implemented yet.")
+        # repo_issues <- tidy(repo_issues)
+    }
 
     repo_issues
 }
