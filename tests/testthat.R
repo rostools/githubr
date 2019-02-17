@@ -1,4 +1,4 @@
 library(testthat)
-library(r2gh)
+library(githubr)
 
-test_check("r2gh")
+test_check("githubr")

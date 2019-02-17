@@ -1,10 +1,10 @@
 ---
-title: "Introduction to r2gh"
+title: "Introduction to githubr"
 author: "Luke Johnston"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Introduction to r2gh}
+  %\VignetteIndexEntry{Introduction to githubr}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
