@@ -1,12 +1,12 @@
-Package: r2gh
+Package: githubr
 Title: Interface to GitHub from R
 Version: 0.0.0.9000
 Authors@R: 
     person("Luke", "Johnston", email = "lwjohnst@gmail.com", role = c("aut", "cre"), 
            comment = c(ORCID = "0000-0003-4169-2616"))
-Description: Using the gh package, this provides a simpler interface to GitHub. 
-    Functions include adding or closing Issues, setting labels, or creating new 
-    repositories.
+Description: Based around the gh package, this package provides a user-friendly 
+    interface to GitHub. Functions include adding or closing Issues, setting labels, 
+    or creating new repositories. Most GitHub API requests are or will be available.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -16,8 +16,9 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown,
-    testthat
+    testthat,
+    tibble
 VignetteBuilder: knitr
-URL: https://github.com/lwjohnst86/r2gh
-BugReports: https://github.com/lwjohnst86/r2gh/issues
+URL: https://github.com/lwjohnst86/githubr
+BugReports: https://github.com/lwjohnst86/githubr/issues
 RoxygenNote: 6.1.1
