@@ -87,10 +87,6 @@ gh_list_issues <- function(repo, tidied = FALSE) {
     repo_issues
 }
 
-gh_list_issues_self <- function() {
-    gh::gh("GET /user/issues")
-}
-
 #' List labels in a GitHub repository.
 #'
 #' @inheritParams gh_list_issues
