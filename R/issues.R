@@ -125,7 +125,7 @@ gh_list_labels <- function(repo, tidied = TRUE) {
 #' @return No output.
 #' @export
 #'
-#' @seealso See [githubr::githubr-package].
+#' @seealso See [githubr-package].
 #'
 #' @examples
 #'
