@@ -2,10 +2,10 @@
 #'
 #' @inheritParams template_github_request
 #' @param title The title of the issue.
-#' @param body Optional. Add a description to the issue.
-#' @param labels Optional. Add a label or labels to the issue.
-#' @param assignees Optional. Assign a collaborator to deal with the issue.
-#' @param milestone Optional. The milestone (as a number) to add to the issue.
+#' @param body Add a description to the issue.
+#' @param labels Add a label or labels to the issue.
+#' @param assignees Assign a collaborator to deal with the issue.
+#' @param milestone The milestone (as a number) to add to the issue.
 #'
 #' @return Has no output.
 #' @export
