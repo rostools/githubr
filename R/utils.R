@@ -37,12 +37,9 @@ tidy.gh_response <- function(x, ...) {
 #' @param ... Other parameters to give to the API, e.g.
 #'
 #' @return Sends a request to GitHub.
-#' @export
+#' @keywords internal
 #'
 #' @seealso See [githubr::githubr-package].
-#'
-#' @examples
-#' do.call(mean, list(c(runif(100), NA), na.rm = TRUE, trim = 0))
 #'
 template_github_request <- function(repo, .request, .method = "GET", params_list = NULL) {
     owner <- extract_owner(repo)
