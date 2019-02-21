@@ -75,3 +75,7 @@ extract_owner <- function(repo) {
 extract_repository <- function(repo) {
     strsplit(repo, split = "/")[[1]][2]
 }
+
+in_development <- function() {
+    stop("This function has not been implemented yet.", call. = FALSE)
+}
