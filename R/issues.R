@@ -142,12 +142,22 @@ gh_delete_label <- function(repo, label_name) {
     return(invisible(NULL))
 }
 
+#' Delete all labels from a GitHub repository.
+#'
+#' @inheritParams template_github_request
+#'
+#' @return Has no output.
+#'
+#' @seealso [gh_create_label()] [gh_delete_label()]
+#'
 gh_delete_all_labels <- function(repo) {
+    in_development()
     # TODO: Include a check to confirm to delete all labels.
     repo_labels <- tidy(gh_list_labels(repo))$name
     for (label_name in repo_labels) {
         gh_delete_label(repo, label_name = label_name)
     }
+    return(invisible(NULL))
 }
 
 #' Create a GitHub label for a repository
@@ -155,7 +165,7 @@ gh_delete_all_labels <- function(repo) {
 #' @inheritParams template_github_request
 #' @param name Name to give the new label.
 #' @param color Color in hexadecimal. See the list of common [colors](https://www.color-hex.com/).
-#' @param description Optional. Description to give label.
+#' @param description Description to give label.
 #'
 #' @return No output.
 #' @export
