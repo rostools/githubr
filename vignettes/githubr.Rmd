@@ -26,29 +26,14 @@ and how to set it up in R, check out the
 ## Functions implemented (or not)
 
 ```{r, echo=FALSE}
-rd_info <- tools::Rd_db("githubr")
-extract_rd_info <- function(info) {
-    keyword <- unname(tools:::.Rd_get_metadata(info, "keyword"))
-    if (length(keyword) == 0)
-        keyword <- NA
+# Extract functions documentation data
+func_data <- githubr:::.rd_as_data_for_table()
 
-    data.frame(
-        Name = unname(tools:::.Rd_get_name(info)),
-        Description = unname(tools:::.Rd_get_title(info)),
-        Keyword = keyword,
-        stringsAsFactors = FALSE
-    )
-}
-rd_data <- lapply(rd_info, extract_rd_info)
-rd_data <- do.call(rbind, rd_data)
-rownames(rd_data) <- NULL
+# Keep only those exposed to users and print table
+funs_impl <- githubr:::.functions_implemented(func_data)
+githubr:::.table_of_functions(funs_impl, caption = "Implemented githubr functions.")
 
-rd_data$Name <- paste0("`", rd_data$FuncName, "`")
-funs_impl <- rd_data[rd_data$FuncName %in% getNamespaceExports("githubr"), ]
-funs_impl$FuncName <- NULL
-knitr::kable(funs_impl[c(2, 1)], caption = "Implemented githubr functions.")
-
-# Do same thing but exclude based on keyword internal and on not exported.
-
-funs_impl <- rd_data[rd_data$FuncName %in% getNamespaceExports("githubr"), ]
+# Keep those not exposed and remove internal functions and print table
+funs_to_impl <- githubr:::.functions_to_implement(func_data)
+githubr:::.table_of_functions(funs_impl, caption = "Functions to still implement in githubr.")
 ```
