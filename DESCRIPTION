@@ -12,12 +12,12 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 Imports: 
-    gh
+    gh,
+    tibble
 Suggests: 
     knitr,
     rmarkdown,
-    testthat,
-    tibble
+    testthat
 VignetteBuilder: knitr
 URL: https://github.com/lwjohnst86/githubr
 BugReports: https://github.com/lwjohnst86/githubr/issues
