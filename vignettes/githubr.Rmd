@@ -1,6 +1,6 @@
 ---
 title: "Introduction to githubr"
-author: "Luke Johnston"
+author: "Luke W. Johnston"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
