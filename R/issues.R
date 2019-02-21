@@ -197,3 +197,32 @@ gh_create_label <- function(repo, name, color, description = NULL) {
     )
     return(invisible(NULL))
 }
+
+#' Edit parts of a GitHub repository's issue.
+#'
+#' @inheritParams template_github_request
+#' @inheritParams gh_new_issue
+#' @param issue_number The number of the issue.
+#' @param state Whether issue is open or closed.
+#'
+#' @return Has not output.
+#'
+gh_edit_issue <- function(repo, issue_number, title, body,
+                          state, milestone, labels, assignees) {
+    in_development()
+    # See https://developer.github.com/v3/issues/#edit-an-issue
+}
+
+#' Close a GitHub repository's issue.
+#'
+#' @inheritParams template_github_request
+#' @inheritParams gh_edit_issue
+#'
+#' @return Has not output.
+#'
+gh_close_issue <- function(repo, issue_number) {
+    in_development()
+    # gh_edit_issue(repo = repo, issue_number = issue_number,
+    # state = "closed")
+    # See https://developer.github.com/v3/issues/#edit-an-issue
+}
