@@ -16,5 +16,39 @@ knitr::opts_chunk$set(
 )
 ```
 
+## Authenticating: Obtaining a GitHub PAT
 
-Do devtools::github_pat() in the console to get authenticated.
+Almost all functions from githubr require authenticating through GitHub through
+a PAT, or Personal Access Token. For more information about it, how to get one,
+and how to set it up in R, check out the
+[`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html). Do this for the first step!
+
+## Functions implemented (or not)
+
+```{r, echo=FALSE}
+rd_info <- tools::Rd_db("githubr")
+extract_rd_info <- function(info) {
+    keyword <- unname(tools:::.Rd_get_metadata(info, "keyword"))
+    if (length(keyword) == 0)
+        keyword <- NA
+
+    data.frame(
+        Name = unname(tools:::.Rd_get_name(info)),
+        Description = unname(tools:::.Rd_get_title(info)),
+        Keyword = keyword,
+        stringsAsFactors = FALSE
+    )
+}
+rd_data <- lapply(rd_info, extract_rd_info)
+rd_data <- do.call(rbind, rd_data)
+rownames(rd_data) <- NULL
+
+rd_data$Name <- paste0("`", rd_data$FuncName, "`")
+funs_impl <- rd_data[rd_data$FuncName %in% getNamespaceExports("githubr"), ]
+funs_impl$FuncName <- NULL
+knitr::kable(funs_impl[c(2, 1)], caption = "Implemented githubr functions.")
+
+# Do same thing but exclude based on keyword internal and on not exported.
+
+funs_impl <- rd_data[rd_data$FuncName %in% getNamespaceExports("githubr"), ]
+```
