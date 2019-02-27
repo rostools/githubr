@@ -101,6 +101,9 @@ in_development <- function() {
     stop("This function has not been implemented yet.", call. = FALSE)
 }
 
+
+# For tables in vignette --------------------------------------------------
+
 .extract_rd_info_to_dataframe <- function(info) {
     keyword <- unname(tools:::.Rd_get_metadata(info, "keyword"))
     if (length(keyword) == 0)
@@ -137,3 +140,4 @@ in_development <- function() {
 .table_of_functions <- function(func_data, caption) {
     knitr::kable(func_data[c("Name", "Description")], caption = caption)
 }
+
