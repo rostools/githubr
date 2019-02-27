@@ -5,24 +5,20 @@ repository <- "lwjohnst86/test-githubr"
 test_that("POST correctly", {
     skip("Don't post issues right now.")
 
-    lapply(gh_list_issues("lwjohnst86/test-githubr"), names)[[1]][1]
-    gh_list_issues("lwjohnst86/test-githubrh")[[2]][1]
-    tidy(gh_list_labels("lwjohnst86/test-githubr"))
+    gh_new_issue(repository, title = "testing4r", labels = "bug")
 
-    gh_new_issue("lwjohnst86/test-githubr", title = "testing4r", labels = "bug")
 })
 
 test_that("List labels, regular and tidied", {
-    repo_labels <- gh_list_labels(repository, tidied = FALSE)
-    expect_is(repo_labels, "gh_response")
-    tidied_labels <- tidy(repo_labels)
-    expect_is(tidied_labels, "data.frame")
-    expect_equal(ncol(tidied_labels), 6)
+    repo_labels_orig <- gh_list_labels(repository, tidied = FALSE)
+    expect_is(repo_labels_orig, "gh_response")
+    tidied_labels <- tidy(repo_labels_orig)
+    expect_is(tidied_labels, "tbl_df")
+    repo_labels_tidy <- gh_list_labels(repository)
+    expect_equal(ncol(repo_labels_tidy), 2)
 })
 
 test_that("Create and delete labels", {
-
-    skip("This works fine.")
     new_label <- "Interest"
 
     # Create
