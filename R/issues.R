@@ -82,7 +82,7 @@ gh_list_issues <- function(repo, tidied = TRUE) {
 
     if (tidied) {
         repo_issues <- tidy(repo_issues)
-        optional_names <- grep("labels\\.name|assignees|milestone|body",
+        optional_names <- grep("labels\\.name|assignees|milestone\\.(number|title|state|open_issues|closed_issues)|body",
                                names(repo_issues), value = TRUE)
         headers <- c("state", "number", "title", optional_names, "comments")
         repo_issues <- repo_issues[headers]
