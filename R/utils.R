@@ -133,7 +133,7 @@ in_development <- function() {
 
 .functions_to_implement <- function(func_data) {
     func_data <- func_data[!func_data$FuncName %in% getNamespaceExports("githubr"), ]
-    func_data <- func_data[!func_data$Keyword == "internal", ]
+    func_data <- func_data[!func_data$Keyword == "internal" | is.na(func_data$Keyword), ]
     tibble::as_tibble(func_data)
 }
 
