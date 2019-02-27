@@ -106,8 +106,8 @@ head(gh_list_issues(repository), 1)
 There are of course several functions that will eventually be implemented. Here
 is a list of functions planned to be implemented at some point in the future.
 
-```{r}
+```{r, echo=FALSE}
 # Keep those not exposed and remove internal functions and print table
 funs_to_impl <- githubr:::.functions_to_implement(func_data)
-githubr:::.table_of_functions(funs_impl, caption = "Functions to still implement in githubr.")
+githubr:::.table_of_functions(funs_to_impl, caption = "Functions to still implement in githubr.")
 ```
