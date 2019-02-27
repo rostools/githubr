@@ -37,14 +37,14 @@ remotes::install_github("lwjohnst86/githubr")
 
 ## Examples
 
-So far there are only functions to interact with Issues. For example, to list
-issues or labels:
+Currently, most of the functionality revolves around Issues. For example, to
+list issues or labels:
 
 ```{r}
 library(githubr)
 
 # See issues
-gh_list_issues("lwjohnst86/carpenter")[[1]]
+gh_list_issues("lwjohnst86/carpenter")
 
 # See labels.
 gh_list_labels("lwjohnst86/githubr")

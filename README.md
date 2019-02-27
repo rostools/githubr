@@ -26,168 +26,63 @@ remotes::install_github("lwjohnst86/githubr")
 
 ## Examples
 
-So far there are only functions to interact with Issues. For example, to
-list issues or labels:
+Currently, most of the functionality revolves around Issues. For
+example, to list issues or labels:
 
 ``` r
 library(githubr)
 
 # See issues
-gh_list_issues("lwjohnst86/carpenter")[[1]]
-#> $url
-#> [1] "https://api.github.com/repos/lwjohnst86/carpenter/issues/25"
-#> 
-#> $repository_url
-#> [1] "https://api.github.com/repos/lwjohnst86/carpenter"
-#> 
-#> $labels_url
-#> [1] "https://api.github.com/repos/lwjohnst86/carpenter/issues/25/labels{/name}"
-#> 
-#> $comments_url
-#> [1] "https://api.github.com/repos/lwjohnst86/carpenter/issues/25/comments"
-#> 
-#> $events_url
-#> [1] "https://api.github.com/repos/lwjohnst86/carpenter/issues/25/events"
-#> 
-#> $html_url
-#> [1] "https://github.com/lwjohnst86/carpenter/issues/25"
-#> 
-#> $id
-#> [1] 405201784
-#> 
-#> $node_id
-#> [1] "MDU6SXNzdWU0MDUyMDE3ODQ="
-#> 
-#> $number
-#> [1] 25
-#> 
-#> $title
-#> [1] "Remove OSX from travis?"
-#> 
-#> $user
-#> $user$login
-#> [1] "lwjohnst86"
-#> 
-#> $user$id
-#> [1] 6662983
-#> 
-#> $user$node_id
-#> [1] "MDQ6VXNlcjY2NjI5ODM="
-#> 
-#> $user$avatar_url
-#> [1] "https://avatars2.githubusercontent.com/u/6662983?v=4"
-#> 
-#> $user$gravatar_id
-#> [1] ""
-#> 
-#> $user$url
-#> [1] "https://api.github.com/users/lwjohnst86"
-#> 
-#> $user$html_url
-#> [1] "https://github.com/lwjohnst86"
-#> 
-#> $user$followers_url
-#> [1] "https://api.github.com/users/lwjohnst86/followers"
-#> 
-#> $user$following_url
-#> [1] "https://api.github.com/users/lwjohnst86/following{/other_user}"
-#> 
-#> $user$gists_url
-#> [1] "https://api.github.com/users/lwjohnst86/gists{/gist_id}"
-#> 
-#> $user$starred_url
-#> [1] "https://api.github.com/users/lwjohnst86/starred{/owner}{/repo}"
-#> 
-#> $user$subscriptions_url
-#> [1] "https://api.github.com/users/lwjohnst86/subscriptions"
-#> 
-#> $user$organizations_url
-#> [1] "https://api.github.com/users/lwjohnst86/orgs"
-#> 
-#> $user$repos_url
-#> [1] "https://api.github.com/users/lwjohnst86/repos"
-#> 
-#> $user$events_url
-#> [1] "https://api.github.com/users/lwjohnst86/events{/privacy}"
-#> 
-#> $user$received_events_url
-#> [1] "https://api.github.com/users/lwjohnst86/received_events"
-#> 
-#> $user$type
-#> [1] "User"
-#> 
-#> $user$site_admin
-#> [1] FALSE
-#> 
-#> 
-#> $labels
-#> $labels[[1]]
-#> $labels[[1]]$id
-#> [1] 375930154
-#> 
-#> $labels[[1]]$node_id
-#> [1] "MDU6TGFiZWwzNzU5MzAxNTQ="
-#> 
-#> $labels[[1]]$url
-#> [1] "https://api.github.com/repos/lwjohnst86/carpenter/labels/question"
-#> 
-#> $labels[[1]]$name
-#> [1] "question"
-#> 
-#> $labels[[1]]$color
-#> [1] "cc317c"
-#> 
-#> $labels[[1]]$default
-#> [1] TRUE
-#> 
-#> 
-#> 
-#> $state
-#> [1] "open"
-#> 
-#> $locked
-#> [1] FALSE
-#> 
-#> $assignee
-#> NULL
-#> 
-#> $assignees
-#> list()
-#> 
-#> $milestone
-#> NULL
-#> 
-#> $comments
-#> [1] 0
-#> 
-#> $created_at
-#> [1] "2019-01-31T11:29:04Z"
-#> 
-#> $updated_at
-#> [1] "2019-01-31T11:29:04Z"
-#> 
-#> $closed_at
-#> NULL
-#> 
-#> $author_association
-#> [1] "OWNER"
-#> 
-#> $body
-#> [1] ""
+gh_list_issues("lwjohnst86/carpenter")
+#> # A tibble: 13 x 37
+#>    state number title labels.name body  milestone.url milestone.html_…
+#>    <chr> <chr>  <chr> <chr>       <chr> <chr>         <chr>           
+#>  1 open  25     Remo… question    ""    <NA>          <NA>            
+#>  2 open  24     Add … docs        ""    https://api.… https://github.…
+#>  3 open  23     Add … docs        To Z… https://api.… https://github.…
+#>  4 open  21     Crea… feature     ""    https://api.… https://github.…
+#>  5 open  20     Func… feature     For … https://api.… https://github.…
+#>  6 open  19     Add … feature     ""    https://api.… https://github.…
+#>  7 open  17     Add … feature     ""    https://api.… https://github.…
+#>  8 open  16     Use … feature     ""    <NA>          <NA>            
+#>  9 open  15     Have… feature     Inst… https://api.… https://github.…
+#> 10 open  14     Chan… feature     This… https://api.… https://github.…
+#> 11 open  9      Use … feature     Simi… https://api.… https://github.…
+#> 12 open  2      Add … <NA>        ""    <NA>          <NA>            
+#> 13 open  1      Add … <NA>        ""    <NA>          <NA>            
+#> # … with 30 more variables: milestone.labels_url <chr>,
+#> #   milestone.id <chr>, milestone.node_id <chr>, milestone.number <chr>,
+#> #   milestone.title <chr>, milestone.description <chr>,
+#> #   milestone.creator.login <chr>, milestone.creator.id <chr>,
+#> #   milestone.creator.node_id <chr>, milestone.creator.avatar_url <chr>,
+#> #   milestone.creator.gravatar_id <chr>, milestone.creator.url <chr>,
+#> #   milestone.creator.html_url <chr>,
+#> #   milestone.creator.followers_url <chr>,
+#> #   milestone.creator.following_url <chr>,
+#> #   milestone.creator.gists_url <chr>,
+#> #   milestone.creator.starred_url <chr>,
+#> #   milestone.creator.subscriptions_url <chr>,
+#> #   milestone.creator.organizations_url <chr>,
+#> #   milestone.creator.repos_url <chr>, milestone.creator.events_url <chr>,
+#> #   milestone.creator.received_events_url <chr>,
+#> #   milestone.creator.type <chr>, milestone.creator.site_admin <chr>,
+#> #   milestone.open_issues <chr>, milestone.closed_issues <chr>,
+#> #   milestone.state <chr>, milestone.created_at <chr>,
+#> #   milestone.updated_at <chr>, comments <chr>
 
 # See labels.
 gh_list_labels("lwjohnst86/githubr")
-#> # A tibble: 8 x 6
-#>         id node_id       url                         name     color default
-#>      <int> <chr>         <chr>                       <chr>    <chr> <lgl>  
-#> 1   1.23e9 MDU6TGFiZWwx… https://api.github.com/rep… bug      d73a… TRUE   
-#> 2   1.23e9 MDU6TGFiZWwx… https://api.github.com/rep… duplica… cfd3… TRUE   
-#> 3   1.23e9 MDU6TGFiZWwx… https://api.github.com/rep… enhance… a2ee… TRUE   
-#> 4   1.23e9 MDU6TGFiZWwx… https://api.github.com/rep… good fi… 7057… TRUE   
-#> 5   1.23e9 MDU6TGFiZWwx… https://api.github.com/rep… help wa… 0086… TRUE   
-#> 6   1.23e9 MDU6TGFiZWwx… https://api.github.com/rep… invalid  e4e6… TRUE   
-#> 7   1.23e9 MDU6TGFiZWwx… https://api.github.com/rep… question d876… TRUE   
-#> 8   1.23e9 MDU6TGFiZWwx… https://api.github.com/rep… wontfix  ffff… TRUE
+#> # A tibble: 8 x 2
+#>   name             color 
+#>   <chr>            <chr> 
+#> 1 bug              d73a4a
+#> 2 duplicate        cfd3d7
+#> 3 enhancement      a2eeef
+#> 4 good first issue 7057ff
+#> 5 help wanted      008672
+#> 6 invalid          e4e669
+#> 7 question         d876e3
+#> 8 wontfix          ffffff
 ```
 
 ## Contributing
