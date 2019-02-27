@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{tidy}
 \alias{tidy}
-\title{Convert a GitHub response object to a tidied data.frame.}
+\title{Convert a \code{gh_response} object to a tidied data.frame.}
 \usage{
 tidy(x, ...)
 }
@@ -12,14 +12,24 @@ tidy(x, ...)
 \item{...}{Arguments passed to other methods or cases.}
 }
 \value{
-Returns a data.frame, or if available as a \code{\link[tibble:tibble]{tibble::tibble()}}.
+a \link[tibble:tibble-package]{tibble}.
 }
 \description{
-Convert a GitHub response object to a tidied data.frame.
+The class \code{gh_response} is returned from \link[gh:gh]{gh::gh}. The tidy function converts
+it from a list to a \link[tibble:tibble-package]{tibble}.
 }
 \examples{
 
 \dontrun{
-tidy(gh_list_labels("lwjohnst86/test-githubr"))
+# For labels
+Labels <- gh_list_labels("lwjohnst86/test-githubr", tidied = FALSE)
+Labels
+tidy(Labels)
+gh_list_labels("lwjohnst86/test-githubr")
+
+Issues <- gh_list_issues("lwjohnst86/test-githubr", tidied = FALSE)
+Issues
+tidy(Issues)
+gh_list_issues("lwjohnst86/test-githubr")
 }
 }

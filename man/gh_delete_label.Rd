@@ -25,5 +25,5 @@ gh_delete_label("lwjohnst86/test-githubr", "Interest")
 }
 }
 \seealso{
-See \link[githubr:githubr-package]{githubr::githubr-package}.
+See \link{githubr-package}.
 }

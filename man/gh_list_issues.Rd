@@ -13,7 +13,8 @@ gh_list_issues(repo, tidied = TRUE)
 \item{tidied}{Tidy to data.frame from list?}
 }
 \value{
-A tidy data.frame or a \code{gh_response} class as a list.
+A tidied \link[tibble:tibble-package]{tibble} or a \code{gh_response} class as
+a list.
 }
 \description{
 List issues in GitHub repository.

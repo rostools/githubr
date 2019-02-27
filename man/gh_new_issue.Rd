@@ -13,13 +13,13 @@ gh_new_issue(repo, title, body = NULL, labels = NULL,
 
 \item{title}{The title of the issue.}
 
-\item{body}{Optional. Add a description to the issue.}
+\item{body}{Add a description to the issue.}
 
-\item{labels}{Optional. Add a label or labels to the issue.}
+\item{labels}{Add a label or labels to the issue.}
 
-\item{assignees}{Optional. Assign a collaborator to deal with the issue.}
+\item{assignees}{Assign a collaborator to deal with the issue.}
 
-\item{milestone}{Optional. The milestone (as a number) to add to the issue.}
+\item{milestone}{The milestone (as a number) to add to the issue.}
 }
 \value{
 Has no output.

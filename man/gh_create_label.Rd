@@ -2,7 +2,7 @@
 % Please edit documentation in R/issues.R
 \name{gh_create_label}
 \alias{gh_create_label}
-\title{Create a GitHub label for a repository}
+\title{Create a GitHub label for a repository.}
 \usage{
 gh_create_label(repo, name, color, description = NULL)
 }
@@ -14,13 +14,13 @@ gh_create_label(repo, name, color, description = NULL)
 
 \item{color}{Color in hexadecimal. See the list of common \href{https://www.color-hex.com/}{colors}.}
 
-\item{description}{Optional. Description to give label.}
+\item{description}{Description to give label.}
 }
 \value{
 No output.
 }
 \description{
-Create a GitHub label for a repository
+Create a GitHub label for a repository.
 }
 \examples{
 

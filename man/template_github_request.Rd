@@ -24,10 +24,7 @@ Sends a request to GitHub.
 Is mostly a thin wrapper around \code{\link[gh:gh]{gh::gh()}}, with some additional conveniences
 to simplify GitHub request calls.
 }
-\examples{
-do.call(mean, list(c(runif(100), NA), na.rm = TRUE, trim = 0))
-
-}
 \seealso{
 See \link[githubr:githubr-package]{githubr::githubr-package}.
 }
+\keyword{internal}
