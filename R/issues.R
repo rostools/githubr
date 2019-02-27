@@ -140,6 +140,7 @@ gh_list_labels <- function(repo, tidied = TRUE) {
 #' gh_delete_label("lwjohnst86/test-githubr", "Interest")
 #' }
 gh_delete_label <- function(repo, label_name) {
+    # TODO: Check that label exists.
     template_github_request(
         repo = repo,
         .request = "/repos/:owner/:repo/labels/:name",
