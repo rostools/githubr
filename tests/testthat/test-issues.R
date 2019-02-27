@@ -3,10 +3,12 @@ context("Test GET and POST issue requests")
 repository <- "lwjohnst86/test-githubr"
 
 test_that("POST correctly", {
-    skip("Don't post issues right now.")
+    skip("So far it works fine. No need to test and create another issue.")
+    skip_on_cran()
+    skip_on_appveyor()
+    skip_on_travis()
 
-    gh_new_issue(repository, title = "testing4r", labels = "bug")
-
+    gh_new_issue(repository, title = "Test Issue", labels = "bug")
 })
 
 test_that("List labels, regular and tidied", {
@@ -19,6 +21,10 @@ test_that("List labels, regular and tidied", {
 })
 
 test_that("Create and delete labels", {
+    skip_on_cran()
+    skip_on_appveyor()
+    skip_on_travis()
+
     new_label <- "Interest"
 
     # Create
