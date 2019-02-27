@@ -1,6 +1,6 @@
 Package: githubr
 Title: Interface to GitHub from R
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: 
     person("Luke", "Johnston", email = "lwjohnst@gmail.com", role = c("aut", "cre"), 
            comment = c(ORCID = "0000-0003-4169-2616"))
