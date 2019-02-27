@@ -8,6 +8,8 @@
 status](https://travis-ci.org/lwjohnst86/githubr.svg?branch=master)](https://travis-ci.org/lwjohnst86/githubr)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/lwjohnst86/githubr?branch=master&svg=true)](https://ci.appveyor.com/project/lwjohnst86/githubr)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 The goal of githubr is to simplify using GitHub’s API. Uses the
 wonderful [gh](https://github.com/r-lib/gh) R package. Inspiration also
