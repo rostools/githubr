@@ -50,10 +50,10 @@ gh_new_issue <- function(repo, title, body = NULL, labels = NULL,
 
     # TODO: Add messaging about posting
     # cat("\n\nPosting `", title, "`\n\n")
-    # if (!devtools:::yesno("Are you sure you want to post this event as an Issue?")) {
-        # usethis:::done("Event posted as an Issue to UofTCoders/Events.")
+    # if (!devtools:::yesno("Are you sure you want to post this Issue?")) {
+        # usethis:::done("")
     # } else {
-    #     message("Event not posted to Issue.")
+    #     message("")
     # }
 }
 
