@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 The goal of githubr is to simplify using GitHub's API. Uses the wonderful [gh] R
-package. Inspiration also comes from the [gitlabr].
+package. Inspiration also comes from the [gitlabr] package.
 
 [gh]: https://github.com/r-lib/gh
 [gitlabr]: https://CRAN.R-project.org/package=gitlabr
