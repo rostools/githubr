@@ -68,11 +68,43 @@ githubr:::.table_of_functions(funs_impl, caption = "Implemented githubr function
 
 ### Creating, editing, and listing issues
 
-Working with issues is easy! Have a repository and you want to see wh
+Working with issues is easy! Have a repository and you want to see what issues 
+are available?
 
+```{r}
+library(githubr)
+gh_list_issues("lwjohnst86/carpenter")
+```
 
+What about checking out all the labels?
+
+```{r}
+repository <- "lwjohnst86/test-githubr"
+gh_list_labels(repository)
+```
+
+You can even add another label (and delete it if you want).
+
+```{r}
+gh_create_label(repository, "Interesting", "deadad")
+gh_list_labels(repository)
+
+# Then delete it
+gh_delete_label(repository, "Interesting")
+gh_list_labels(repository)
+```
+
+Want to create a new issue? Easy too!
+
+```{r}
+gh_new_issue(repository, title = "Making an issue", labels = c("bug", "wontfix"))
+head(gh_list_issues(repository), 1)
+```
 
 ## Functions to be implemented
+
+There are of course several functions that will eventually be implemented. Here
+is a list of functions planned to be implemented at some point in the future.
 
 ```{r}
 # Keep those not exposed and remove internal functions and print table
