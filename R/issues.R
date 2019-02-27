@@ -62,7 +62,8 @@ gh_new_issue <- function(repo, title, body = NULL, labels = NULL,
 #' @inheritParams template_github_request
 #' @param tidied Tidy to data.frame from list?
 #'
-#' @return A tidy data.frame or a `gh_response` class as a list.
+#' @return A tidied [tibble][tibble::tibble-package] or a `gh_response` class as
+#'   a list.
 #' @export
 #'
 #' @seealso See [githubr::githubr-package].
@@ -71,7 +72,7 @@ gh_new_issue <- function(repo, title, body = NULL, labels = NULL,
 #' \dontrun{
 #' gh_list_issues("lwjohnst86/test-githubr")
 #' }
-gh_list_issues <- function(repo, tidied = FALSE) {
+gh_list_issues <- function(repo, tidied = TRUE) {
     # TODO: Add filtering
     repo_issues <- template_github_request(
         repo = repo,
@@ -80,8 +81,11 @@ gh_list_issues <- function(repo, tidied = FALSE) {
     )
 
     if (tidied) {
-        warning("This has not been implemented yet.")
-        # repo_issues <- tidy(repo_issues)
+        repo_issues <- tidy(repo_issues)
+        optional_names <- grep("labels\\.name|assignees|milestone|body",
+                               names(repo_issues), value = TRUE)
+        headers <- c("state", "number", "title", optional_names, "comments")
+        repo_issues <- repo_issues[headers]
     }
 
     repo_issues
@@ -91,7 +95,8 @@ gh_list_issues <- function(repo, tidied = FALSE) {
 #'
 #' @inheritParams gh_list_issues
 #'
-#' @return A tidy data.frame or a `gh_response` class as a list.
+#' @return A tidied [tibble][tibble::tibble-package] or a `gh_response` class as
+#'   a list.
 #' @export
 #'
 #' @seealso See [githubr::githubr-package].
@@ -111,8 +116,10 @@ gh_list_labels <- function(repo, tidied = TRUE) {
         .method = "GET"
     )
 
-    if (tidied)
+    if (tidied) {
         repo_labels <- tidy(repo_labels)
+        repo_labels <- repo_labels[c("name", "color")]
+    }
 
     repo_labels
 }
