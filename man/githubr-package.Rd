@@ -11,11 +11,11 @@ Based around the gh package, this package provides a user-friendly
     or creating new repositories. Most GitHub API requests are or will be available.
 }
 \seealso{
-See the \href{https://developer.github.com/v3/}{GitHub API documentation}
-for more details about the types of requests that are possible to send to
-GitHub. For more details on implementing your own requests or for how
-githubr's requests were constructed, see the \href{https://github.com/r-lib/gh}{gh}
-R package.
+Read the package vignette for more details on usage:
+\code{vignette("githubr", package = "githubr")}. See the \href{https://developer.github.com/v3/}{GitHub API documentation} for more details about the
+types of requests that are possible to send to GitHub. For more details on
+implementing your own requests or for how githubr's requests were
+constructed, see the \href{https://github.com/r-lib/gh}{gh} R package.
 }
 \author{
 \strong{Maintainer}: Luke Johnston \email{lwjohnst@gmail.com} (0000-0003-4169-2616)
