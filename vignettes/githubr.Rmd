@@ -16,14 +16,46 @@ knitr::opts_chunk$set(
 )
 ```
 
+The githubr package is primarily a wrapper around the great [gh] package to
+create functions for explicit and simple calls to the API. For instance, if you
+want to create a new issue to a repository, you can use the function
+`gh_new_issue()` rather than tinkering through the [GitHub API]. The arguments 
+to the functions provide (almost) everything you need when interacting with GitHub!
+Currently, githubr (and by extension the [gh] package it is based on) uses the
+v3 of the API. 
+
+The main purpose for this package is to programmatically interact with GitHub
+activities, such as quickly creating issues for multiple problems, deleting
+labels and using other labels (e.g. less software focused), or making edits to
+existing issues.
+
+A big assumption about using githubr is that you are authenticated with GitHub
+via a Personal Access Token.
+
+[gh]: https://github.com/r-lib/gh
+[GitHub API]: https://developer.github.com/v3/
+
 ## Authenticating: Obtaining a GitHub PAT
 
-Almost all functions from githubr require authenticating through GitHub through
-a PAT, or Personal Access Token. For more information about it, how to get one,
-and how to set it up in R, check out the
-[`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html). Do this for the first step!
+Before you can really start using githubr, you need to get authenticated with 
+GitHub. Nearly all githubr functions require a GitHub PAT, or Personal Access
+Token. The PAT is obtained through a `GITHUB_PAT` R environment variable and can be found by using:
 
-## Functions implemented (or not)
+```{r, eval=FALSE}
+gh::gh_whoami()
+```
+
+If you have it set up, you should see a `"token"` key-value pair. For more
+information about PAT, how to get one, and how to set it up in R, check out the
+[`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html).
+Do this in order to fully make use of the githubr functions.
+
+## Functions implemented
+
+The [GitHub API] is extensive, so not all functions have (or will be) implemented
+to fully interact with GitHub. If you want to make an API request for items not
+listed in the two tables below, head over to the [gh] package to be able to do 
+what you want.
 
 ```{r, echo=FALSE}
 # Extract functions documentation data
@@ -32,7 +64,17 @@ func_data <- githubr:::.rd_as_data_for_table()
 # Keep only those exposed to users and print table
 funs_impl <- githubr:::.functions_implemented(func_data)
 githubr:::.table_of_functions(funs_impl, caption = "Implemented githubr functions.")
+```
 
+### Creating, editing, and listing issues
+
+Working with issues is easy! Have a repository and you want to see wh
+
+
+
+## Functions to be implemented
+
+```{r}
 # Keep those not exposed and remove internal functions and print table
 funs_to_impl <- githubr:::.functions_to_implement(func_data)
 githubr:::.table_of_functions(funs_impl, caption = "Functions to still implement in githubr.")
