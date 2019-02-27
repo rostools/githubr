@@ -168,7 +168,7 @@ gh_delete_all_labels <- function(repo) {
     return(invisible(NULL))
 }
 
-#' Create a GitHub label for a repository
+#' Create a GitHub label for a repository.
 #'
 #' @inheritParams template_github_request
 #' @param name Name to give the new label.
