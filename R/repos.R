@@ -71,6 +71,17 @@ gh_list_user_orgs <- function(tidied = TRUE) {
     response
 }
 
+#' Edit GitHub repository details and settings.
+#'
+#' @inheritParams template_github_request
+#' @inheritParams gh_new_repo
+#' @param has_issues Whether repository should have issues.
+#' @param has_projects Whether repository should have projects.
+#' @param has_wiki Whether repository should have a wiki.
+#' @param default_branch What the default branch should be.
+#'
+#' @return Nothing.
+#'
 gh_edit_repo <- function(repo, name, description, private,
                          has_issues, has_projects, has_wiki,
                          default_branch) {
