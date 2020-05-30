@@ -4,8 +4,14 @@
 \alias{gh_new_issue}
 \title{Create a GitHub issue in a repository.}
 \usage{
-gh_new_issue(repo, title, body = NULL, labels = NULL,
-  assignees = NULL, milestone = NULL)
+gh_new_issue(
+  repo,
+  title,
+  body = NULL,
+  labels = NULL,
+  assignees = NULL,
+  milestone = NULL
+)
 }
 \arguments{
 \item{repo}{Repository name in the form of "username/reponame" or

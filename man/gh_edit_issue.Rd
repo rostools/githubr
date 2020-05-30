@@ -4,8 +4,16 @@
 \alias{gh_edit_issue}
 \title{Edit parts of a GitHub repository's issue.}
 \usage{
-gh_edit_issue(repo, issue_number, title, body, state, milestone, labels,
-  assignees)
+gh_edit_issue(
+  repo,
+  issue_number,
+  title,
+  body,
+  state,
+  milestone,
+  labels,
+  assignees
+)
 }
 \arguments{
 \item{repo}{Repository name in the form of "username/reponame" or

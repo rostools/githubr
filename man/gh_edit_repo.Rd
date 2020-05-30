@@ -4,8 +4,16 @@
 \alias{gh_edit_repo}
 \title{Edit GitHub repository details and settings.}
 \usage{
-gh_edit_repo(repo, name, description, private, has_issues, has_projects,
-  has_wiki, default_branch)
+gh_edit_repo(
+  repo,
+  name,
+  description,
+  private,
+  has_issues,
+  has_projects,
+  has_wiki,
+  default_branch
+)
 }
 \arguments{
 \item{repo}{Repository name in the form of "username/reponame" or

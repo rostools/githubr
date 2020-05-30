@@ -17,8 +17,9 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown,
-    testthat
+    testthat,
+    git2r
 VignetteBuilder: knitr
 URL: https://github.com/lwjohnst86/githubr
 BugReports: https://github.com/lwjohnst86/githubr/issues
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0

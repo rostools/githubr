@@ -4,8 +4,7 @@
 \alias{template_github_request}
 \title{Basic template request to send to GitHub.}
 \usage{
-template_github_request(repo, .request, .method = "GET",
-  params_list = NULL)
+template_github_request(repo, .request, .method = "GET", params_list = NULL)
 }
 \arguments{
 \item{repo}{Repository name in the form of "username/reponame" or

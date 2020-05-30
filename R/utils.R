@@ -1,3 +1,22 @@
+#' Get the repository name based on remote name of the current working directory.
+#'
+#'
+#'
+#' @param remote Remote name. Default is "origin".
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' proj_repo()
+proj_repo <- function(remote = "origin") {
+    repo <-  NULL
+    if (requireNamespace("git2r", quietly = TRUE)) {
+        repo <- git2r::remote_url(remote = remote)
+        repo <- sub("^.*github\\.com[:/](.*/.*)\\.git$", "\\1", repo)
+    }
+    return(repo)
+}
 
 #' Convert a `gh_response` object to a tidied data.frame.
 #'

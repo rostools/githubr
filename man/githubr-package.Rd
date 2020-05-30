@@ -18,7 +18,7 @@ implementing your own requests or for how githubr's requests were
 constructed, see the \href{https://github.com/r-lib/gh}{gh} R package.
 }
 \author{
-\strong{Maintainer}: Luke Johnston \email{lwjohnst@gmail.com} (0000-0003-4169-2616)
+\strong{Maintainer}: Luke Johnston \email{lwjohnst@gmail.com} (\href{https://orcid.org/0000-0003-4169-2616}{ORCID})
 
 }
 \keyword{internal}
