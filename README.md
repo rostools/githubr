@@ -3,13 +3,16 @@
 
 # githubr: An R Interface to GitHub
 
+<!-- badges: start -->
+
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Travis build
-status](https://travis-ci.org/lwjohnst86/githubr.svg?branch=master)](https://travis-ci.org/lwjohnst86/githubr)
+[![R build
+status](https://github.com/rostools/githubr/workflows/R-CMD-check/badge.svg)](https://github.com/rostools/githubr/actions)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/lwjohnst86/githubr?branch=master&svg=true)](https://ci.appveyor.com/project/lwjohnst86/githubr)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<!-- badges: end -->
 
 The goal of githubr is to simplify using GitHub’s API. Uses the
 wonderful [gh](https://github.com/r-lib/gh) R package. Inspiration also
@@ -35,22 +38,23 @@ library(githubr)
 
 # See issues
 gh_list_issues("lwjohnst86/carpenter")
-#> # A tibble: 13 x 11
-#>    state number title labels.name body  milestone.number milestone.title
-#>    <chr> <chr>  <chr> <chr>       <chr> <chr>            <chr>          
-#>  1 open  25     Remo… question    ""    <NA>             <NA>           
-#>  2 open  24     Add … docs        ""    1                v0.3.0         
-#>  3 open  23     Add … docs        To Z… 1                v0.3.0         
-#>  4 open  21     Crea… feature     ""    1                v0.3.0         
-#>  5 open  20     Func… feature     For … 1                v0.3.0         
-#>  6 open  19     Add … feature     ""    1                v0.3.0         
-#>  7 open  17     Add … feature     ""    1                v0.3.0         
-#>  8 open  16     Use … feature     ""    <NA>             <NA>           
-#>  9 open  15     Have… feature     Inst… 1                v0.3.0         
-#> 10 open  14     Chan… feature     This… 1                v0.3.0         
-#> 11 open  9      Use … feature     Simi… 1                v0.3.0         
-#> 12 open  2      Add … <NA>        ""    <NA>             <NA>           
-#> 13 open  1      Add … <NA>        ""    <NA>             <NA>           
+#> # A tibble: 14 x 11
+#>    state number title body  labels.name milestone.number milestone.title
+#>    <chr> <chr>  <chr> <chr> <chr>       <chr>            <chr>          
+#>  1 open  26     Inte… "htt… <NA>        <NA>             <NA>           
+#>  2 open  25     Remo… ""    question    <NA>             <NA>           
+#>  3 open  24     Add … ""    docs        1                v0.3.0         
+#>  4 open  23     Add … "To … docs        1                v0.3.0         
+#>  5 open  21     Crea… ""    feature     1                v0.3.0         
+#>  6 open  20     Func… "For… feature     1                v0.3.0         
+#>  7 open  19     Add … ""    feature     1                v0.3.0         
+#>  8 open  17     Add … ""    feature     1                v0.3.0         
+#>  9 open  16     Use … ""    feature     <NA>             <NA>           
+#> 10 open  15     Have… "Ins… feature     1                v0.3.0         
+#> 11 open  14     Chan… "Thi… feature     1                v0.3.0         
+#> 12 open  9      Use … "Sim… feature     1                v0.3.0         
+#> 13 open  2      Add … ""    <NA>        <NA>             <NA>           
+#> 14 open  1      Add … ""    <NA>        <NA>             <NA>           
 #> # … with 4 more variables: milestone.open_issues <chr>,
 #> #   milestone.closed_issues <chr>, milestone.state <chr>, comments <chr>
 
