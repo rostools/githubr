@@ -1,6 +1,8 @@
 # githubr 0.1.0.9000
 
 * Use GitHub Actions instead of travis.
+* Generate website automatically with pkgdown and GitHub Actions.
+* Export tidy S3 methods (#7 and #13).
 
 # githubr 0.1.0
 
