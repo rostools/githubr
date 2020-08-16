@@ -99,91 +99,18 @@
 <h2 class="hasAnchor">
 <a href="#functions-implemented" class="anchor"></a>Functions implemented</h2>
 <p>The <a href="https://developer.github.com/v3/">GitHub API</a> is extensive, so not all functions have (or will be) implemented to fully interact with GitHub. If you want to make an API request for items not listed in the two tables below, head over to the <a href="https://github.com/r-lib/gh">gh</a> package to be able to do what you want.</p>
-<table class="table">
-<caption>Implemented githubr functions.</caption>
-<thead><tr class="header">
-<th align="left">Name</th>
-<th align="left">Description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code>gh_create_label</code></td>
-<td align="left">Create a GitHub label for a repository.</td>
-</tr>
-<tr class="even">
-<td align="left"><code>gh_delete_label</code></td>
-<td align="left">Delete a GitHub label.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>gh_list_issues</code></td>
-<td align="left">List issues in GitHub repository.</td>
-</tr>
-<tr class="even">
-<td align="left"><code>gh_list_labels</code></td>
-<td align="left">List labels in a GitHub repository.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>gh_list_user_orgs</code></td>
-<td align="left">List GitHub organizations an user is a member of.</td>
-</tr>
-<tr class="even">
-<td align="left"><code>gh_new_issue</code></td>
-<td align="left">Create a GitHub issue in a repository.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>gh_new_repo</code></td>
-<td align="left">Create either a personal or organization repository.</td>
-</tr>
-<tr class="even">
-<td align="left"><code>proj_repo</code></td>
-<td align="left">Project Git remote URL.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>tidy</code></td>
-<td align="left">Convert a ‘gh_response’ object to a tidied data.frame.</td>
-</tr>
-</tbody>
-</table>
 <div id="creating-editing-and-listing-issues" class="section level3">
 <h3 class="hasAnchor">
 <a href="#creating-editing-and-listing-issues" class="anchor"></a>Creating, editing, and listing issues</h3>
 <p>Working with issues is easy! Have a repository and you want to see what issues are available?</p>
+<blockquote>
+<p><em>Note</em>: The code output isn’t included since each function used calls the GitHub API, which has strict limits on using their service (for good security reasons). So this documentation doesn’t include the output.</p>
+</blockquote>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">githubr</span>)
-<span class="fu"><a href="../reference/gh_list_issues.html">gh_list_issues</a></span>(<span class="st">"lwjohnst86/carpenter"</span>)
-<span class="co">#&gt; # A tibble: 14 x 11</span>
-<span class="co">#&gt;    state number title body  labels.name milestone.number milestone.title</span>
-<span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;            &lt;chr&gt;          </span>
-<span class="co">#&gt;  1 open  26     Inte… "htt… &lt;NA&gt;        &lt;NA&gt;             &lt;NA&gt;           </span>
-<span class="co">#&gt;  2 open  25     Remo… ""    question    &lt;NA&gt;             &lt;NA&gt;           </span>
-<span class="co">#&gt;  3 open  24     Add … ""    docs        1                v0.3.0         </span>
-<span class="co">#&gt;  4 open  23     Add … "To … docs        1                v0.3.0         </span>
-<span class="co">#&gt;  5 open  21     Crea… ""    feature     1                v0.3.0         </span>
-<span class="co">#&gt;  6 open  20     Func… "For… feature     1                v0.3.0         </span>
-<span class="co">#&gt;  7 open  19     Add … ""    feature     1                v0.3.0         </span>
-<span class="co">#&gt;  8 open  17     Add … ""    feature     1                v0.3.0         </span>
-<span class="co">#&gt;  9 open  16     Use … ""    feature     &lt;NA&gt;             &lt;NA&gt;           </span>
-<span class="co">#&gt; 10 open  15     Have… "Ins… feature     1                v0.3.0         </span>
-<span class="co">#&gt; 11 open  14     Chan… "Thi… feature     1                v0.3.0         </span>
-<span class="co">#&gt; 12 open  9      Use … "Sim… feature     1                v0.3.0         </span>
-<span class="co">#&gt; 13 open  2      Add … ""    &lt;NA&gt;        &lt;NA&gt;             &lt;NA&gt;           </span>
-<span class="co">#&gt; 14 open  1      Add … ""    &lt;NA&gt;        &lt;NA&gt;             &lt;NA&gt;           </span>
-<span class="co">#&gt; # … with 4 more variables: milestone.open_issues &lt;chr&gt;,</span>
-<span class="co">#&gt; #   milestone.closed_issues &lt;chr&gt;, milestone.state &lt;chr&gt;, comments &lt;chr&gt;</span></pre></body></html></div>
+<span class="fu"><a href="../reference/gh_list_issues.html">gh_list_issues</a></span>(<span class="st">"lwjohnst86/carpenter"</span>)</pre></body></html></div>
 <p>What about checking out all the labels?</p>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">repository</span> <span class="kw">&lt;-</span> <span class="st">"lwjohnst86/test-githubr"</span>
-<span class="fu"><a href="../reference/gh_list_labels.html">gh_list_labels</a></span>(<span class="no">repository</span>)
-<span class="co">#&gt; # A tibble: 9 x 2</span>
-<span class="co">#&gt;   name                color </span>
-<span class="co">#&gt;   &lt;chr&gt;               &lt;chr&gt; </span>
-<span class="co">#&gt; 1 bug                 d73a4a</span>
-<span class="co">#&gt; 2 duplicate           cfd3d7</span>
-<span class="co">#&gt; 3 enhancement         a2eeef</span>
-<span class="co">#&gt; 4 feature request     ededed</span>
-<span class="co">#&gt; 5 good first issue    7057ff</span>
-<span class="co">#&gt; 6 help wanted         008672</span>
-<span class="co">#&gt; 7 invalid             e4e669</span>
-<span class="co">#&gt; 8 question :question: d876e3</span>
-<span class="co">#&gt; 9 wontfix             ffffff</span></pre></body></html></div>
+<span class="fu"><a href="../reference/gh_list_labels.html">gh_list_labels</a></span>(<span class="no">repository</span>)</pre></body></html></div>
 <p>You can even add another label (and delete it if you want).</p>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="../reference/gh_create_label.html">gh_create_label</a></span>(<span class="no">repository</span>, <span class="st">"Interesting"</span>, <span class="st">"deadad"</span>)
 <span class="co"># Then delete it</span>
@@ -196,67 +123,6 @@
 <h2 class="hasAnchor">
 <a href="#functions-to-be-implemented" class="anchor"></a>Functions to be implemented</h2>
 <p>There are of course several functions that will eventually be implemented. Here is a list of functions planned to be implemented at some point in the future.</p>
-<table class="table">
-<caption>Functions to still implement in githubr.</caption>
-<thead><tr class="header">
-<th align="left">Name</th>
-<th align="left">Description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code>gh_close_issue</code></td>
-<td align="left">Close a GitHub repository’s issue.</td>
-</tr>
-<tr class="even">
-<td align="left"><code>gh_close_pull_request</code></td>
-<td align="left">Close a currently open GitHub Pull Request.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>gh_delete_all_labels</code></td>
-<td align="left">Delete all labels from a GitHub repository.</td>
-</tr>
-<tr class="even">
-<td align="left"><code>gh_delete_release</code></td>
-<td align="left">Delete a GitHub release.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>gh_edit_issue</code></td>
-<td align="left">Edit parts of a GitHub repository’s issue.</td>
-</tr>
-<tr class="even">
-<td align="left"><code>gh_edit_pull_request</code></td>
-<td align="left">Make edits to existing GitHub Pull Requests.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>gh_edit_release</code></td>
-<td align="left">Edits an existing GitHub release.</td>
-</tr>
-<tr class="even">
-<td align="left"><code>gh_edit_repo</code></td>
-<td align="left">Edit GitHub repository details and settings.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>gh_list_pull_requests</code></td>
-<td align="left">List all Pull Requests in a GitHub repository.</td>
-</tr>
-<tr class="even">
-<td align="left"><code>gh_list_releases</code></td>
-<td align="left">List all releases in a GitHub repository.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>gh_list_tags</code></td>
-<td align="left">List all tags in a GitHub repository.</td>
-</tr>
-<tr class="even">
-<td align="left"><code>gh_new_pull_request</code></td>
-<td align="left">Create a GitHub pull request.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>gh_new_release</code></td>
-<td align="left">Create a release of a Git tag.</td>
-</tr>
-</tbody>
-</table>
 </div>
   </div>
 
