@@ -40,5 +40,5 @@ gh_new_issue("lwjohnst86/test-githubr", title = "Example issue", labels = "bug")
 }
 }
 \seealso{
-See \link[githubr:githubr-package]{githubr::githubr-package}.
+See \link{githubr-package}.
 }

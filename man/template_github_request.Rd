@@ -24,6 +24,6 @@ Is mostly a thin wrapper around \code{\link[gh:gh]{gh::gh()}}, with some additio
 to simplify GitHub request calls.
 }
 \seealso{
-See \link[githubr:githubr-package]{githubr::githubr-package}.
+See \link{githubr-package}.
 }
 \keyword{internal}

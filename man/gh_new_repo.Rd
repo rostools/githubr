@@ -29,5 +29,5 @@ gh_new_repo("lwjohnst86/test-repo")
 
 }
 \seealso{
-See \link[githubr:githubr-package]{githubr::githubr-package}.
+See \link{githubr-package}.
 }

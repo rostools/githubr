@@ -22,4 +22,4 @@ Suggests:
 VignetteBuilder: knitr
 URL: https://github.com/lwjohnst86/githubr
 BugReports: https://github.com/lwjohnst86/githubr/issues
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1

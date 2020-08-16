@@ -29,5 +29,5 @@ gh_create_label("lwjohnst86/test-githubr", "Interest", "deadad")
 }
 }
 \seealso{
-See \link[githubr:githubr-package]{githubr::githubr-package}.
+See \link{githubr-package}.
 }

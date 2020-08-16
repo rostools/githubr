@@ -29,5 +29,5 @@ tidy(gh_list_labels("lwjohnst86/test-githubr"))
 }
 }
 \seealso{
-See \link[githubr:githubr-package]{githubr::githubr-package}.
+See \link{githubr-package}.
 }
