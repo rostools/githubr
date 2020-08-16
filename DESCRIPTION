@@ -13,13 +13,16 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 Imports: 
     gh,
-    tibble
+    tibble,
+    lifecycle
 Suggests: 
     knitr,
     rmarkdown,
     testthat,
-    git2r
+    git2r,
+    tools
 VignetteBuilder: knitr
 URL: https://github.com/lwjohnst86/githubr
 BugReports: https://github.com/lwjohnst86/githubr/issues
 RoxygenNote: 7.1.1
+RdMacros: lifecycle

@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{proj_repo}
 \alias{proj_repo}
-\title{Get the repository name based on remote name of the current working directory.}
+\title{Project Git remote URL.}
 \usage{
 proj_repo(remote = "origin")
 }
@@ -10,11 +10,11 @@ proj_repo(remote = "origin")
 \item{remote}{Remote name. Default is "origin".}
 }
 \value{
-
+Remote name of R Project.
 }
 \description{
-Get the repository name based on remote name of the current working directory.
-}
-\examples{
-proj_repo()
+\lifecycle{experimental}
+
+Get the repository name based on remote name of the current working
+directory.
 }

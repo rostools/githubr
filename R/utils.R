@@ -1,14 +1,16 @@
-#' Get the repository name based on remote name of the current working directory.
+#' Project Git remote URL.
 #'
+#' @description
+#' \lifecycle{experimental}
 #'
+#' Get the repository name based on remote name of the current working
+#' directory.
 #'
 #' @param remote Remote name. Default is "origin".
 #'
-#' @return
+#' @return Remote name of R Project.
 #' @export
 #'
-#' @examples
-#' proj_repo()
 proj_repo <- function(remote = "origin") {
     repo <-  NULL
     if (requireNamespace("git2r", quietly = TRUE)) {

@@ -75,6 +75,7 @@ gh_list_user_orgs <- function(tidied = TRUE) {
 #'
 #' @inheritParams template_github_request
 #' @inheritParams gh_new_repo
+#' @param name ... Need to confirm what this is for.
 #' @param has_issues Whether repository should have issues.
 #' @param has_projects Whether repository should have projects.
 #' @param has_wiki Whether repository should have a wiki.

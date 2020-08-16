@@ -19,6 +19,8 @@ gh_edit_repo(
 \item{repo}{Repository name in the form of "username/reponame" or
 "orgname/reponame", e.g. "lwjohnst86/githubr".}
 
+\item{name}{... Need to confirm what this is for.}
+
 \item{description}{Repository description.}
 
 \item{private}{Whether the repository should be public or private. Default is
