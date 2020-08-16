@@ -4,14 +4,13 @@ repository <- "lwjohnst86/test-githubr"
 
 test_that("POST correctly", {
     skip("So far it works fine. No need to test and create another issue.")
-    skip_on_cran()
-    skip_on_appveyor()
-    skip_on_travis()
 
     gh_new_issue(repository, title = "Test Issue", labels = "bug")
 })
 
 test_that("List labels, regular and tidied", {
+    skip_on_ci()
+    # TODO: Convert to mock http calls
     repo_labels_orig <- gh_list_labels(repository, tidied = FALSE)
     expect_is(repo_labels_orig, "gh_response")
     tidied_labels <- tidy(repo_labels_orig)
@@ -21,9 +20,8 @@ test_that("List labels, regular and tidied", {
 })
 
 test_that("Create and delete labels", {
-    skip_on_cran()
-    skip_on_appveyor()
-    skip_on_travis()
+    skip_on_ci()
+    # TODO: Convert to mock http calls
 
     new_label <- "Interest"
 
