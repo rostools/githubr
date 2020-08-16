@@ -12,7 +12,8 @@ vignette: >
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  eval=FALSE
 )
 helper_file <- list.files(
     c(".."),
@@ -48,7 +49,7 @@ Before you can really start using githubr, you need to get authenticated with
 GitHub. Nearly all githubr functions require a GitHub PAT, or Personal Access
 Token. The PAT is obtained through a `GITHUB_PAT` R environment variable and can be found by using:
 
-```{r, eval=FALSE}
+```{r}
 gh::gh_whoami()
 ```
 
@@ -77,6 +78,10 @@ funs_impl <- .functions_implemented(func_data)
 
 Working with issues is easy! Have a repository and you want to see what issues 
 are available?
+
+> *Note*: The code output isn't included since each function used calls the GitHub
+API, which has strict limits on using their service (for good security reasons).
+So this documentation doesn't include the output.
 
 ```{r}
 library(githubr)

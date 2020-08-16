@@ -3,7 +3,7 @@
 * Use GitHub Actions instead of travis.
 * Generate website automatically with pkgdown and GitHub Actions.
 * Export tidy S3 methods (#7 and #13).
-* Function to find the Git remote name and project repo automatically: `proj_repo()` (#12).
+* Function to find the Git remote name and project repo automatically: `proj_repo()` (#12, #2).
 
 # githubr 0.1.0
 
